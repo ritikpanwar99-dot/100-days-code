@@ -1,0 +1,37 @@
+#include <stdio.h>
+
+int main()
+{
+    char date[11], month[4];
+
+    scanf("%s", date);
+
+    if(date[3] == '0' && date[4] == '1')
+        sprintf(month, "Jan");
+    else if(date[3] == '0' && date[4] == '2')
+        sprintf(month, "Feb");
+    else if(date[3] == '0' && date[4] == '3')
+        sprintf(month, "Mar");
+    else if(date[3] == '0' && date[4] == '4')
+        sprintf(month, "Apr");
+    else if(date[3] == '0' && date[4] == '5')
+        sprintf(month, "May");
+    else if(date[3] == '0' && date[4] == '6')
+        sprintf(month, "Jun");
+    else if(date[3] == '0' && date[4] == '7')
+        sprintf(month, "Jul");
+    else if(date[3] == '0' && date[4] == '8')
+        sprintf(month, "Aug");
+    else if(date[3] == '0' && date[4] == '9')
+        sprintf(month, "Sep");
+    else if(date[3] == '1' && date[4] == '0')
+        sprintf(month, "Oct");
+    else if(date[3] == '1' && date[4] == '1')
+        sprintf(month, "Nov");
+    else if(date[3] == '1' && date[4] == '2')
+        sprintf(month, "Dec");
+
+    printf("%.2s-%s-%.4s", date, month, date + 6);
+
+    return 0;
+}
