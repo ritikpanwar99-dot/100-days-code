@@ -1,0 +1,54 @@
+#include <stdio.h>
+
+int main()
+{
+    char str[200], word[100], longest[100];
+    int i = 0, j = 0, max = 0, len = 0;
+
+    fgets(str, sizeof(str), stdin);
+
+    while(str[i] != '\0')
+    {
+        if(str[i] != ' ' && str[i] != '\n')
+        {
+            word[j] = str[i];
+            j++;
+            len++;
+        }
+        else
+        {
+            word[j] = '\0';
+
+            if(len > max)
+            {
+                max = len;
+                for(j = 0; word[j] != '\0'; j++)
+                {
+                    longest[j] = word[j];
+                }
+                longest[j] = '\0';
+            }
+
+            j = 0;
+            len = 0;
+        }
+
+        i++;
+    }
+
+    word[j] = '\0';
+
+    if(len > max)
+    {
+        max = len;
+        for(j = 0; word[j] != '\0'; j++)
+        {
+            longest[j] = word[j];
+        }
+        longest[j] = '\0';
+    }
+
+    printf("%s", longest);
+
+    return 0;
+}
