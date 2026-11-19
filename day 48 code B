@@ -1,0 +1,42 @@
+#include <stdio.h>
+
+int main()
+{
+    char str[200], temp;
+    int i = 0, j, start;
+
+    fgets(str, sizeof(str), stdin);
+
+    while(str[i] != '\0')
+    {
+        if(str[i] != ' ' && str[i] != '\n')
+        {
+            start = i;
+
+            while(str[i] != ' ' && str[i] != '\n' && str[i] != '\0')
+            {
+                i++;
+            }
+
+            j = i - 1;
+
+            while(start < j)
+            {
+                temp = str[start];
+                str[start] = str[j];
+                str[j] = temp;
+
+                start++;
+                j--;
+            }
+        }
+        else
+        {
+            i++;
+        }
+    }
+
+    printf("%s", str);
+
+    return 0;
+}
